@@ -1,20 +1,20 @@
-package endpoint;
+package com.example.test.endpoint;
 
-import domain.Customer;
+import com.example.test.domain.Customer;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
-import model.command.CustomerCommand;
-import model.criteria.CustomerCriteria;
+import com.example.test.model.command.CustomerCommand;
+import com.example.test.model.criteria.CustomerCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
-import service.CustomerService;
+import com.example.test.service.CustomerService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("customer")
+@RequestMapping("customers")
 public class CustomerController {
     @Autowired
     CustomerService customerService;

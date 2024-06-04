@@ -1,4 +1,4 @@
-package common;
+package com.example.test.common;
 
 import lombok.Data;
 import org.springframework.http.HttpStatus;

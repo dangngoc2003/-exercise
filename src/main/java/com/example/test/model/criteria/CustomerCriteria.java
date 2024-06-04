@@ -1,4 +1,4 @@
-package model.criteria;
+package com.example.test.model.criteria;
 
 
 

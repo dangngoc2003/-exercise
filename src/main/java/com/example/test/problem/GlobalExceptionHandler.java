@@ -1,4 +1,4 @@
-package problem;
+package com.example.test.problem;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
@@ -41,3 +41,4 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         }
         return problemDetail;
     }
+}

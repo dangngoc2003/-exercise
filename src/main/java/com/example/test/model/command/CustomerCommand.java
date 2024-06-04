@@ -1,16 +1,16 @@
-package model.command;
+package com.example.test.model.command;
 
-import domain.Customer;
+import com.example.test.domain.Customer;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
-import model.criteria.CustomerCriteria;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class CustomerCommand {
+    private Long id;
     @NotBlank
     @Schema(description = "Têm của khách")
     private String name;
@@ -29,13 +29,16 @@ public class CustomerCommand {
                 .phone(customer.getPhone())
                 .build();
     }
-
-    public static CustomerCommand entityToModel(Customer customer) {
-        return CustomerCommand.builder()
-                .name(customer.getName())
-                .age(customer.getAge())
-                .age(customer.getAge())
-                .phone(customer.getPhone())
-                .build();
+    public static Customer dtoToEntity(CustomerCommand command){
+        Customer customer = new Customer();
+        customer.getId();
+        customer.setName(command.getName());
+        customer.setAge(command.getAge());
+        customer.setEmail(command.getEmail());
+        customer.setPhone(command.getPhone());
+        return customer;
     }
+
+
+
 }

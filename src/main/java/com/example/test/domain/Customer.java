@@ -1,10 +1,9 @@
-package domain;
+package com.example.test.domain;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
-import model.command.CustomerCommand;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -22,17 +21,17 @@ public class Customer implements Serializable {
     private Long id;
     @NotBlank
     private String name;
+    private String phone;
     private String age;
     private String email;
-    private String phone;
+
     public static Customer entityToModel(Customer customer) {
         return Customer.builder()
+                .id(customer.getId())
                 .name(customer.getName())
                 .age(customer.getAge())
                 .age(customer.getAge())
                 .phone(customer.getPhone())
                 .build();
     }
-
-
 }

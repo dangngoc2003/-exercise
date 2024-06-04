@@ -1,4 +1,4 @@
-package problem;
+package com.example.test.problem;
 
 import lombok.*;
 
